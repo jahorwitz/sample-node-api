@@ -1,0 +1,51 @@
+{
+  "name": "sample-node-api",
+  "version": "1.0.0",
+  "description": "Sample node service for retrieving data from the json blob api",
+  "main": "index.js",
+  "scripts": {
+    "start": "node dist/index.js",
+    "compile": "babel server --out-dir dist --delete-dir-on-start --source-maps inline --copy-files",
+    "dev": "nodemon server --exec babel-node --config .nodemonrc.json",
+    "dev:debug": "nodemon server --exec babel-node --config .nodemonrc.json --inspect",
+    "test": "mocha ./server/**/*.test.js --require @babel/register --exit",
+    "lint": "eslint -c .eslintrc.json {server,test}/**",
+    "lint:fix": "eslint --fix -c .eslintrc.json {server,test}/**"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.323.0",
+    "axios": "^0.19.0",
+    "axios-mock-adapter": "^1.16.0",
+    "body-parser": "^1.18.2",
+    "cookie-parser": "^1.4.3",
+    "dotenv": "^6.0.0",
+    "express": "^4.16.2",
+    "path": "^0.12.7",
+    "pg": "^7.5.0",
+    "pino": "^5.7.0",
+    "swagger-express-middleware": "^1.0.0-alpha.12"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.1.0",
+    "@babel/node": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/register": "^7.0.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-eslint": "^8.2.2",
+    "babel-jest": "^23.6.0",
+    "chai": "^4.2.0",
+    "coffeescript": "^2.3.2",
+    "eslint": "^4.19.1",
+    "eslint-config-prettier": "^2.10.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-prettier": "^2.6.0",
+    "mocha": "^5.2.0",
+    "nodemon": "^1.18.4",
+    "prettier": "^1.14.2",
+    "request": "^2.88.0",
+    "sinon": "^6.3.5"
+  },
+  "author": "Josh Horwitz <jahorwitz94@gmail.com> (https://github.com/jahorwitz)"
+}

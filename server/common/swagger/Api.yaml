@@ -1,0 +1,89 @@
+swagger: "2.0"
+info:
+  version: 1.0.0
+  title: sample-node-api
+  description: Sample node service for retrieving data from the json blob api
+basePath: /api/v1
+tags:
+  - name: Sample Node API
+    description: Simple get endpoints for retrieving json data
+  - name: Specification
+    description: The swagger API specification
+
+consumes:
+  - application/json
+produces:
+  - application/json
+
+
+definitions:
+  JsonData:
+    type: object
+    title: example
+    required:
+      - guid
+      - firstname
+      - lastname
+      - zip
+      - address
+      - email
+      - bio
+      - hobbies
+    properties:
+      guid:
+        type: string
+        example: "61F59E28-138D-AD45-6B0C-189A81A7C2CD"
+      firstname:
+        type: string
+        example: "Hasad"
+      lastname:
+        type: string
+        example: "Walters"
+      zip:
+        type: string
+        example: "11111"
+      address:
+        type: string
+        example: "9308 Neque. Avenue"
+      email:
+        type: string
+        example: "ultrices.mauris@Cras.com"
+      bio:
+        type: string
+        example: "Lorum ipsum..."
+      hobbies:
+        type: string
+        example: "movies"
+
+paths:
+  /json_get:
+    get:
+      tags:
+        - Json Data
+      description: Fetch array of user data
+      responses:
+        200:
+          description: Returns Json data for all users
+
+  /json_get/{zipCode}:
+    get:
+      tags:
+        - Json Data
+      parameters:
+        - name: zipCode
+          in: path
+          description: zip code
+          required: true
+          type: string
+      description: Fetch array of user data filterd by zip code
+      responses:
+        200:
+          description: Returns Json data for all users with a specified zip code
+    
+  /spec:
+    get:
+      tags:
+        - Specification
+      responses:
+        200:
+          description: Return the API specification
