@@ -1,6 +1,10 @@
-# sample-node-api
+# Node.js Middle Service Template
 
-Simple node api service for retrieving json data
+Simple node api service for retrieving data
+
+## Notes
+
+.env file was included as part of the template as an example. When cloning your repository, add this file to the .gitignore so it is not committed.
 
 ## Get Started
 

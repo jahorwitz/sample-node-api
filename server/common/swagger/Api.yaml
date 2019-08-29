@@ -1,14 +1,9 @@
 swagger: "2.0"
 info:
   version: 1.0.0
-  title: sample-node-api
-  description: Sample node service for retrieving data from the json blob api
+  title: rxlogic-middle-template
+  description: Sample node middle service for retrieving data from a database
 basePath: /api/v1
-tags:
-  - name: Sample Node API
-    description: Simple get endpoints for retrieving json data
-  - name: Specification
-    description: The swagger API specification
 
 consumes:
   - application/json
@@ -17,9 +12,9 @@ produces:
 
 
 definitions:
-  JsonData:
+  SampleResponse:
     type: object
-    title: example
+    title: Sample Response
     required:
       - guid
       - firstname
@@ -56,30 +51,15 @@ definitions:
         example: "movies"
 
 paths:
-  /json_get:
+  /sample_get:
     get:
       tags:
-        - Json Data
-      description: Fetch array of user data
+        - Sample Endpoint
+      description: Fetch some data
       responses:
         200:
-          description: Returns Json data for all users
+          description: Returns Json data
 
-  /json_get/{zipCode}:
-    get:
-      tags:
-        - Json Data
-      parameters:
-        - name: zipCode
-          in: path
-          description: zip code
-          required: true
-          type: string
-      description: Fetch array of user data filterd by zip code
-      responses:
-        200:
-          description: Returns Json data for all users with a specified zip code
-    
   /spec:
     get:
       tags:
