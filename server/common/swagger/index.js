@@ -19,7 +19,7 @@ export default function(app, routes) {
         },
         {
           useBasePath: true,
-          apiPath: process.env.SWAGGER_API_SPEC,
+          apiPath: "/spec",
           // Disable serving the "Api.yaml" file
           // rawFilesPath: false
         }
@@ -30,11 +30,11 @@ export default function(app, routes) {
       mw.parseRequest({
         // Configure the cookie parser to use secure cookies
         cookie: {
-          secret: process.env.SESSION_SECRET,
+          secret: "mySecret",
         },
         // Don't allow JSON content over 100kb (default is 1mb)
         json: {
-          limit: process.env.REQUEST_LIMIT,
+          limit: "100kb",
         },
       })
     );

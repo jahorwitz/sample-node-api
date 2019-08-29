@@ -5,7 +5,7 @@ import * as http from 'http';
 import * as os from 'os';
 import cookieParser from 'cookie-parser';
 import swaggerify from './swagger';
-import l from './logger';
+import LOGGER from './logger';
 
 const app = new Express();
 
@@ -26,7 +26,7 @@ export default class ExpressServer {
 
   listen(port = process.env.PORT) {
     const welcome = p => () =>
-      l.info(
+    LOGGER.info(
         `up and running in ${process.env.NODE_ENV ||
           'development'} @: ${os.hostname()} on port: ${p}}`
       );

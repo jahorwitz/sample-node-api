@@ -1,7 +1,7 @@
 {
-  "name": "sample-node-api",
+  "name": "rxlogic-middle-template",
   "version": "1.0.0",
-  "description": "Sample node service for retrieving data from the json blob api",
+  "description": "Sample node middle service for retrieving data from an AWS database",
   "main": "index.js",
   "scripts": {
     "start": "node dist/index.js",
