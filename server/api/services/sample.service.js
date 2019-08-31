@@ -2,15 +2,18 @@ import { Pool } from 'pg';
 import LOGGER from '../../common/logger';
 
 class SampleService {
+
+  getPgPool() {
+    return new Pool();
+  }
+
   get() {
     // return Promise.resolve({"response": "hello world"});
-    const pool = new Pool();
-    return pool.query('SELECT NOW()').then((res) => {
-      LOGGER.info(`Successfuly retrieved record from database: ${res}`);
+    const pool = this.getPgPool();
+    return pool.query('SELECT * FROM consumers').then((res) => {
+      LOGGER.info(`Successfuly retrieved record from database. Closing Pool.`);
       pool.end();
-      return {
-        "response": "Hello World"
-      };
+      return res.rows;
     })
     .catch((err) => {
       LOGGER.error(`Error connecting to database: ${err}`);
