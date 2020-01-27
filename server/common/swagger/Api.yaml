@@ -1,7 +1,7 @@
 swagger: "2.0"
 info:
   version: 1.0.0
-  title: rxlogic-middle-template
+  title: node-api-template
   description: Sample node middle service for retrieving data from a database
 basePath: /api/v1
 

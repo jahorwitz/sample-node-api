@@ -1,5 +1,5 @@
 {
-  "name": "rxlogic-middle-template",
+  "name": "node-api-template",
   "version": "1.0.0",
   "description": "Sample node middle service for retrieving data from an AWS database",
   "main": "index.js",
